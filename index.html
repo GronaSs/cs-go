@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тренируем Аим в кэсэгоу</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.ball{
+			height: 150px;
+			width: 150px;
+			background: red;
+			border-radius: 50%;
+			position: absolute;
+			
+		}
+		body{
+			background-image: url(body.jpg);
+			background-size: 100%
+		}
+	</style>
+</head>
+<body>
+	<h1 class="text-white">Скорость: <span class="score"></span></h1>
+	
+	<div class="ball b1" style="margin-left: 10%; margin-top: 10%"></div>
+	<div class="ball b2" style="margin-left: 20%; margin-top: 5%"></div>
+	<div class="ball b3" style="margin-left: 60%; margin-top: 25%"></div>
+	<div class="ball b4" style="margin-left: 30%; margin-top: 19%"></div>
+	<div class="ball b5" style="margin-left: 5%; margin-top: 30%"></div>
+	<div class="ball b6" style="margin-left: 25%; margin-top: 41%"></div>
+	<div class="ball b7" style="margin-left: 49%; margin-top: 40%"></div>
+	<div class="ball b8" style="margin-left: 40%; margin-top: 10%"></div>
+	<div class="ball b9" style="margin-left: 80%; margin-top: 15%"></div>
+	<div class="ball b0" style="margin-left: 75%; margin-top: 30%"></div>
+	
+	<script type="text/javascript">
+		let score = 0
+		let balls = document.querySelectorAll(".ball")
+		let lol = function() { 
+			for(let index = 0; index<10; index = index + 1){
+				balls [index].style.display = "none";
+			}
+		}
+
+		setTimeout(lol, 3000);
+
+		for(let index = 0; index<10; index = index + 1){
+		balls [index].onclick = function(){
+			balls [index].style.display = "none";
+				score = score + 1
+				document.querySelector(".score").innerHTML = score;
+		}
+	}		
+	if (score==10) {//условие
+	alert("Поздравляю, твой аим на высоте!")
+} 
+	</script>
+</body>
+</html>
